@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter temperature value: ");
+        double value = sc.nextDouble();
+
+        System.out.print("Enter unit (C/F/K): ");
+        String unit = sc.next().toUpperCase();
+
+        switch (unit) {
+            case "C":
+                System.out.println("Fahrenheit: " + ((value * 9 / 5) + 32));
+                System.out.println("Kelvin: " + (value + 273.15));
+                break;
+            case "F":
+                System.out.println("Celsius: " + ((value - 32) * 5 / 9));
+                System.out.println("Kelvin: " + (((value - 32) * 5 / 9) + 273.15));
+                break;
+            case "K":
+                System.out.println("Celsius: " + (value - 273.15));
+                System.out.println("Fahrenheit: " + ((value - 273.15) * 9 / 5 + 32));
+                break;
+            default:
+                System.out.println("Invalid unit!");
+        }
+
+        sc.close();
+    }
+}
